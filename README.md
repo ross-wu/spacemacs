@@ -32,8 +32,19 @@
 
 **Quick Install:**
 
+1. Install spacemacs:
+
     git clone https://github.com/ross-wu/spacemacs ~/.emacs.d
+
+2. Then install fonts from https://github.com/powerline/fonts
+
+3. Link my .spacemacs file:
+
+    ln -s $HOME/.emacs.d/_spacemacs .spacemacs
     
-And then install fonts from https://github.com/powerline/fonts
+**My customize key bindings**
+
+See .spacemacs file.
 
 More doc see https://github.com/syl20bnr/spacemacs
+
