@@ -164,6 +164,7 @@ values."
    dotspacemacs-remap-Y-to-y$ nil
    ;; If non-nil, the shift mappings `<' and `>' retain visual state if used
    ;; there. (default t)
+
    dotspacemacs-retain-visual-state-on-shift t
    ;; If non-nil, J and K move lines up and down when in visual mode.
    ;; (default nil)
@@ -308,7 +309,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
   ;; Customize colors.
   (custom-set-variables '(spacemacs-theme-custom-colors
-                          '((lnum . "#e99f10"))))
+                          '((lnum . "#e99f10")
+                            (base . "#dddddd"))))
   )
 
 (defun dotspacemacs/user-config ()
@@ -324,8 +326,8 @@ you should place your code here."
 
   ;; Customize/override key bindings.
   (global-set-key (kbd "M-]") 'next-buffer)
-  (global-set-key (kbd "M-[") 'previous-buffer)
-  (global-set-key (kbd "M-[") 'previous-buffer)
+  (global-set-key (kbd "M-[ M-[") 'previous-buffer)
+  (global-set-key (kbd "M-p") 'previous-buffer)
   (global-set-key (kbd "M-o") 'other-window)
   (define-key winum-keymap (kbd "M-0") 'kill-buffer-and-window)
   (define-key winum-keymap (kbd "M-1") 'delete-other-windows)
