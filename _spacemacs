@@ -316,8 +316,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; Initial window size.
   (setq initial-frame-alist '((top . 1)
                               (left . 20)
-                              (width . 120)
-                              (height . 80)))
+                              (width . 112)
+                              (height . 60)))
   )
 
 (defun dotspacemacs/user-config ()
