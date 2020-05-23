@@ -31,13 +31,28 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     (go :variables
+         go-tab-width 4
+         go-format-before-save t
+         gofmt-command "goimports"
+         godoc-at-point-function 'godoc-gogetdoc)
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm ; or ivy
-     ;; auto-completion
+     (auto-completion :variables
+                      auto-completion-return-key-behavior 'complete
+                      auto-completion-tab-key-behavior 'cycle
+                      auto-completion-complete-with-key-sequence nil
+                      auto-completion-complete-with-key-sequence-delay 0.1
+                      auto-completion-idle-delay 0.2
+                      auto-completion-private-snippets-directory nil
+                      auto-completion-enable-snippets-in-popup nil
+                      auto-completion-enable-help-tooltip nil
+                      auto-completion-use-company-box nil
+                      auto-completion-enable-sort-by-usage nil)
      ;; better-defaults
      emacs-lisp
      ;; git
@@ -132,7 +147,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
+   dotspacemacs-default-font '("Liberation Mono for Powerline"
                                :size 16
                                :weight normal
                                :width normal
@@ -308,7 +323,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
   ;; Customize colors.
   (custom-set-variables '(spacemacs-theme-custom-colors
-                          '((lnum . "#e99f10"))))
+                          '((lnum . "#e99f10")
+                            (base . "#dddddd"))))
   )
 
 (defun dotspacemacs/user-config ()
@@ -323,9 +339,12 @@ you should place your code here."
   (setq powerline-default-separator 'slant)
 
   ;; Customize/override key bindings.
+  (global-set-key (kbd "M-SPC") 'set-mark-command)
   (global-set-key (kbd "M-]") 'next-buffer)
-  (global-set-key (kbd "M-[") 'previous-buffer)
-  (global-set-key (kbd "M-[") 'previous-buffer)
+  (global-set-key (kbd "M-P") 'previous-buffer)
+  (global-set-key (kbd "<C-S-right>") 'next-buffer)
+  (global-set-key (kbd "<C-S-left>") 'previous-buffer)
+  (global-set-key (kbd "M-[ M-[") 'previous-buffer)
   (global-set-key (kbd "M-o") 'other-window)
   (define-key winum-keymap (kbd "M-0") 'kill-buffer-and-window)
   (define-key winum-keymap (kbd "M-1") 'delete-other-windows)
@@ -343,8 +362,8 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (helm-themes helm-swoop helm-projectile helm-mode-manager helm-flx helm-descbinds helm-ag ace-jump-helm-line helm helm-core mmm-mode markdown-toc markdown-mode gh-md ws-butler winum which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline smex restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint ivy-hydra indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-make google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump popup f dash s diminish define-word counsel-projectile projectile pkg-info epl counsel swiper ivy column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed async aggressive-indent adaptive-wrap ace-window ace-link avy)))
- '(spacemacs-theme-custom-colors (quote ((lnum . "#e99f10")))))
+    (helm-company helm-c-yasnippet fuzzy company-statistics company-go company auto-yasnippet yasnippet ac-ispell auto-complete go-guru go-eldoc go-mode helm-themes helm-swoop helm-projectile helm-mode-manager helm-flx helm-descbinds helm-ag ace-jump-helm-line helm helm-core mmm-mode markdown-toc markdown-mode gh-md ws-butler winum which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline smex restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint ivy-hydra indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-make google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump popup f dash s diminish define-word counsel-projectile projectile pkg-info epl counsel swiper ivy column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed async aggressive-indent adaptive-wrap ace-window ace-link avy)))
+ '(spacemacs-theme-custom-colors (quote ((lnum . "#e99f10") (base . "#dddddd")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
