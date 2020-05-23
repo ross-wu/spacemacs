@@ -31,6 +31,11 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     html
+
+     ;; Tab bar.
+     centaur-tabs
+
      (go :variables
          go-tab-width 4
          go-format-before-save t
@@ -352,8 +357,6 @@ you should place your code here."
   (global-set-key (kbd "M-SPC") 'set-mark-command)
   (global-set-key (kbd "M-]") 'next-buffer)
   (global-set-key (kbd "M-P") 'previous-buffer)
-  (global-set-key (kbd "<C-S-right>") 'next-buffer)
-  (global-set-key (kbd "<C-S-left>") 'previous-buffer)
   (global-set-key (kbd "M-[ M-[") 'previous-buffer)
   (global-set-key (kbd "M-o") 'other-window)
   (global-set-key (kbd "M-SPC") 'set-mark-command)
@@ -374,8 +377,9 @@ you should place your code here."
  '(exec-path-from-shell-arguments (quote ("-l")))
  '(package-selected-packages
    (quote
-    (helm-company helm-c-yasnippet fuzzy company-statistics company-go company auto-yasnippet yasnippet ac-ispell auto-complete go-guru go-eldoc go-mode helm-themes helm-swoop helm-projectile helm-mode-manager helm-flx helm-descbinds helm-ag ace-jump-helm-line helm helm-core mmm-mode markdown-toc markdown-mode gh-md ws-butler winum which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline smex restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint ivy-hydra indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-make google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump popup f dash s diminish define-word counsel-projectile projectile pkg-info epl counsel swiper ivy column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed async aggressive-indent adaptive-wrap ace-window ace-link avy)))
- '(spacemacs-theme-custom-colors (quote ((lnum . "#e99f10") (base . "#dddddd")))))
+    (centaur-tabs web-mode tagedit slim-mode scss-mode sass-mode pug-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data tabbar helm-company helm-c-yasnippet fuzzy company-statistics company-go company auto-yasnippet yasnippet ac-ispell auto-complete go-guru go-eldoc go-mode helm-themes helm-swoop helm-projectile helm-mode-manager helm-flx helm-descbinds helm-ag ace-jump-helm-line helm helm-core mmm-mode markdown-toc markdown-mode gh-md ws-butler winum which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline smex restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-j unk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint ivy-hydra indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-make google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump popup f dash s diminish define-word counsel-projectile projectile pkg-info epl counsel swiper ivy column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed async aggressive-indent adaptive-wrap ace-window ace-link avy)))
+ '(spacemacs-theme-custom-colors (quote ((lnum . "#e99f10") (base . "#dddddd"))))
+ '(tabbar-separator (quote (0.5))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
