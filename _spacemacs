@@ -331,6 +331,10 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; Customize colors.
   (custom-set-variables '(spacemacs-theme-custom-colors
                           '((lnum . "#e99f10")
+                            (bg1 . "#101010")
+                            (bg2 . "#2a2a2a")
+                            (comment . "#616161")
+                            (comment-bg . "#101010")
                             (base . "#dddddd"))))
 
   ;; Initial window size.
