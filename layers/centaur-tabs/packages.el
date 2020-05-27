@@ -56,9 +56,9 @@ which require an initialization must be listed explicitly in the list.")
       )
      )
 
-    :bind
-    ("<C-S-left>" . centaur-tabs-backward)
-    ("<C-S-right>" . centaur-tabs-forward)
+    ;; :bind
+    ;; ("<C-S-left>" . centaur-tabs-backward)
+    ;; ("<C-S-right>" . centaur-tabs-forward)
     )
 
   (custom-set-faces
