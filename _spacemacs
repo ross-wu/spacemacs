@@ -365,6 +365,8 @@ you should place your code here."
   (global-set-key (kbd "M-o") 'other-window)
   (global-set-key (kbd "M-SPC") 'set-mark-command)
   (global-set-key (kbd "<f7>") 'compile)
+  (global-set-key (kbd "<mouse-5>") 'scroll-up-line)
+  (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
   (define-key winum-keymap (kbd "M-0") 'kill-buffer-and-window)
   (define-key winum-keymap (kbd "M-1") 'delete-other-windows)
   (define-key winum-keymap (kbd "M-2") 'split-window-horizontally)
